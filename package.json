@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --env.NODE_ENV=local --env.development",
+    "build": "webpack --env.NODE_ENV=local --env.production --progress",
     "test": "jest"
   },
   "author": "Wennod",

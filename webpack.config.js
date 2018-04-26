@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports =  function(env, options) {
-	const isProduction = options.mode === 'production';
-
+	const isProduction = env.production === true;
+	
 	const isOptimized = {
 		splitChunks: {
 			cacheGroups: {
