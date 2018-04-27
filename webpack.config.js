@@ -17,7 +17,6 @@ module.exports =  function(env, options) {
 		}
 	}
 
-
 	const config = {
 		entry: {
 			app: './index.js',
@@ -74,7 +73,7 @@ module.exports =  function(env, options) {
 
 		devServer: {
 			contentBase: path.join(__dirname, 'dist'),
-			port: 5500,
+			port: 8080,
 		}
 	}
 
