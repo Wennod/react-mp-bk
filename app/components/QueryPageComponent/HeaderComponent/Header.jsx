@@ -12,7 +12,7 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <Logo className="header__logo" />
-                <SearchComponent getMovie={this.props.getMovies} className="header__search-component" />
+                <SearchComponent setQueryParam={this.props.setQueryParam} setQueryValue={this.props.setQueryValue} getMovies={this.props.getMovies} className="header__search-component" />
             </div>
         );
     }

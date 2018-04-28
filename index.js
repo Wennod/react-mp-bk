@@ -9,7 +9,7 @@ render(
     <Router>
         <div>
             <Route path="/" component={App} />
-            <Route path="/:movie" component={App} />
+            <Route path="/movie" component={App} />
         </div>
     </Router>,    
     document.getElementById('root')

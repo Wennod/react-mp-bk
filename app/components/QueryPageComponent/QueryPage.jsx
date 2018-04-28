@@ -6,29 +6,43 @@ class QueryPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            queryResults: {}
+            queryResults: {},
+            queryValue: '',
+            queryParam: 'title'
         };
     }
 
-    getMovies(value, param) {
-        fetch(`http://react-cdp-api.herokuapp.com/movies?search=${value}&searchBy=${param}`).then((result) => {
+    getMovies(event) {
+        event.preventDefault();
+        fetch(`http://react-cdp-api.herokuapp.com/movies?search=${this.state.queryValue}&searchBy=${this.state.queryParam}`).then((result) => {
             return result.json();
         }).then((result) => {
-            console.log(result);
             this.setState(() => {
                 return { queryResults: result }; 
             });
         }, (err) => {
-            console.log(err);
+            throw new Error(err);
         });
     }
- 
+
+    setQueryValue(input) {
+        this.setState(() => {
+            return { queryValue: input.value };
+        });
+    }
+
+    setQueryParam(radio) {
+        this.setState(() => {
+            return { queryParam: radio.value };
+        });
+    }
+
     render() {
         return (
-            <div>
-                <Header getMovies={this.getMovies.bind(this)} />
-                <ResultsContainer />
-            </div>
+            <React.Fragment>
+                <Header setQueryValue={this.setQueryValue.bind(this)} getMovies={this.getMovies.bind(this)} setQueryParam={this.setQueryParam.bind(this)} />
+                <ResultsContainer data={this.state.queryResults.data} />
+            </React.Fragment>
         );
     }
 }

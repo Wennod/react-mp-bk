@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import QueryPage from './components/QueryPageComponent/QueryPage';
+import ErrorBoundary from './components/ErrorBoundaryComponent/ErrorBoundary';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -8,7 +9,9 @@ class App extends Component {
 
     render() {
         return (
-            <QueryPage />
+            <ErrorBoundary>
+                <QueryPage />
+            </ErrorBoundary>
         )
     }
 }

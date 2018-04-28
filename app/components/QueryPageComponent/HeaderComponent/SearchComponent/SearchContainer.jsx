@@ -1,8 +1,6 @@
 import React from 'react';
 
-import SearchField from './SearchFieldComponent/SearchField';
-import SearchButton from './SearchButtonComponent/SearchButton';
-import SearchFilter from './SearchFilterComponent/SearchFilter';
+import SearchForm from './SearchFormComponent/SearchForm';
 
 class SearchComponentContainer extends React.Component {
     constructor(props) {
@@ -10,15 +8,8 @@ class SearchComponentContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
-            <div>
-                <SearchField />
-                <div className="search-form__controlls">
-                    <SearchFilter />
-                    <SearchButton getMovies={this.props.getMovie} />
-                </div>
-            </div>
+            <SearchForm setQueryParam={this.props.setQueryParam} setQueryValue={this.props.setQueryValue} getMovies={this.props.getMovies} />
         );
     }
 }

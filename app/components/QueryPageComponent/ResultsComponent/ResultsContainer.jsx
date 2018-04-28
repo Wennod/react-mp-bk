@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ResultsPane from './ResultsPaneComponent/ResultsPane';
 import ResultList from './ResultsListComponent/ResultList';
+import ResultsFilers from './ResultsFiltersComponent/ResultsFilters';
 
 class ResultsContainer extends React.Component {
     constructor(props) {
@@ -11,8 +11,8 @@ class ResultsContainer extends React.Component {
     render() {
         return (
             <div className="results">
-                <ResultsPane />
-                <ResultList />
+                <ResultsFilers isData={this.props.data && this.props.data.length ? this.props.data.length : false} />
+                <ResultList data={this.props.data} />
             </div>
         );
     }

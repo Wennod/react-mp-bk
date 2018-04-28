@@ -3,13 +3,11 @@ import React from 'react';
 import ListItem from '../ResultsListItemComponent/ResultListItem';
 
 const ResultList = (props) => {
-    let { queryResult } = props; 
-
-    if (queryResult) {
+    if (props.data && props.data.length) {
         return (
             <div className="results">
-                {queryResult.map((queryResultItem) => {
-                    return <ListItem data={queryResultItem} />
+                {props.data.map((dataItem) => {
+                    return <ListItem key={dataItem.id} data={dataItem} />
                 })}
             </div>
         );
