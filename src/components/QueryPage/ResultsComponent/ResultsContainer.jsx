@@ -1,7 +1,9 @@
 import React from 'react';
 
 import ResultList from './ResultsListComponent/ResultList';
-import ResultsFilers from './ResultsFiltersComponent/ResultsFilters';
+import ResultsFilters from './ResultsFiltersComponent/ResultsFilters';
+
+import Style from './ResultsContainer.style.scss';
 
 class ResultsContainer extends React.Component {
     constructor(props) {
@@ -11,7 +13,7 @@ class ResultsContainer extends React.Component {
     render() {
         return (
             <div className="results">
-                <ResultsFilers isData={this.props.data && this.props.data.length ? this.props.data.length : false} />
+                <ResultsFilters isData={this.props.data && this.props.data.length ? this.props.data.length : false} />
                 <ResultList data={this.props.data} />
             </div>
         );

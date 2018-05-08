@@ -19,7 +19,7 @@ module.exports =  function(env, options) {
 
 	const config = {
 		entry: {
-			app: './index.js',
+			app: './src/index.js',
 			vendor: [
 				'react',
 				'react-dom',
@@ -50,8 +50,12 @@ module.exports =  function(env, options) {
 					}
 				},
 				{
-					test: /\.css$/,
-					use: ['style-loader', 'css-loader']
+					test: /\.scss$/,
+					use: [
+						"style-loader",
+						"css-loader",
+						"sass-loader"
+					]
 				}
 			]
 		},
@@ -65,7 +69,7 @@ module.exports =  function(env, options) {
 			new HtmlWebpackPlugin({
 				hash: true,
 				myPageHeader: 'rmp',
-				template: './index.html',
+				template: './public/index.html',
 				path: path.join(__dirname, 'dist'),
 				filename: 'index.html'
 			})	

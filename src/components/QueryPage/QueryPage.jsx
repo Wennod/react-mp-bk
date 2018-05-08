@@ -1,6 +1,10 @@
 import React from 'react';
-import ResultsContainer from './ResultsComponent/ResultsContainer';
+
 import Header from './HeaderComponent/Header';
+import ResultsContainer from './ResultsComponent/ResultsContainer';
+import Footer from './FooterComponent/Footer';
+
+import style from './QueryPage.style.scss'
 
 class QueryPage extends React.Component {
     constructor(props) {
@@ -39,10 +43,11 @@ class QueryPage extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className="query-page">
                 <Header setQueryValue={this.setQueryValue.bind(this)} getMovies={this.getMovies.bind(this)} setQueryParam={this.setQueryParam.bind(this)} />
                 <ResultsContainer data={this.state.queryResults.data} />
-            </React.Fragment>
+                {/* <Footer /> */}
+            </div>
         );
     }
 }

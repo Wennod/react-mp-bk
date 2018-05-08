@@ -1,0 +1,26 @@
+.search-form {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    &__input {
+        width: 100%;
+        padding: 5px 15px;
+        margin-bottom: 10px;
+    }
+
+    &__filter-title {
+        margin-right: 10px;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__filter {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+}

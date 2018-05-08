@@ -11,10 +11,7 @@
   "author": "Wennod",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
     "history": "^4.7.2",
-    "html-webpack-plugin": "^3.2.0",
-    "jest": "^22.4.3",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -31,9 +28,16 @@
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "express": "^4.16.3",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "node-sass": "^4.9.0",
     "nodemon": "^1.17.3",
     "react-test-renderer": "^16.3.2",
-    "webpack": "^4.6.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.1",
     "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.3"
   }

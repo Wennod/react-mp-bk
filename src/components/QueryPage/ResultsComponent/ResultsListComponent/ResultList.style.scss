@@ -1,0 +1,10 @@
+.list {
+    display: flex;
+    justify-content: center;
+    
+    &__content {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 85%;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import QueryPage from './components/QueryPageComponent/QueryPage';
-import ErrorBoundary from './components/ErrorBoundaryComponent/ErrorBoundary';
+import QueryPage from './components/QueryPage/QueryPage';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 class App extends Component {
     constructor(props) {
         super(props);
