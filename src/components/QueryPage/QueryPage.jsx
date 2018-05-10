@@ -18,7 +18,7 @@ class QueryPage extends React.Component {
 
     getMovies(event) {
         event.preventDefault();
-        fetch(`http://react-cdp-api.herokuapp.com/movies?search=${this.state.queryValue}&searchBy=${this.state.queryParam}`).then((result) => {
+        fetch(`http://react-cdp-api.herokuapp.com/movies?search=${this.state.queryValue.replace(/\s/g,'%20')}&searchBy=${this.state.queryParam}`).then((result) => {
             return result.json();
         }).then((result) => {
             this.setState(() => {
@@ -46,7 +46,7 @@ class QueryPage extends React.Component {
             <div className="query-page">
                 <Header setQueryValue={this.setQueryValue.bind(this)} getMovies={this.getMovies.bind(this)} setQueryParam={this.setQueryParam.bind(this)} />
                 <ResultsContainer data={this.state.queryResults.data} />
-                {/* <Footer /> */}
+                <Footer />
             </div>
         );
     }

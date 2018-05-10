@@ -1,10 +1,12 @@
 import React from 'react';
 
+import styles from './ResultsFilter.style.scss';
+
 const ResultsPane = (props) => {
     if (props.isData) {
         return (
             <div className="result-filter">
-                <p className="result-filter__count">{props.isData}</p>
+                <p className="result-filter__count">{props.isData} movies found</p>
                 <div className="result-filter__controls">
                     <p className="result-filter__controls-title">Sort by</p>
                     <input type="button" value="release date"/>
@@ -13,7 +15,10 @@ const ResultsPane = (props) => {
             </div>
         )
     } else {
-        return null;
+        return (
+            <div className="result-filter result-filter--nodata">
+            </div>
+        );
     }
 }
 

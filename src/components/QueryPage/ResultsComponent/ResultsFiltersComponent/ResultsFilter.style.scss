@@ -1,0 +1,12 @@
+.result-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    &__controls {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+}

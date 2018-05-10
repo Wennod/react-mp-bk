@@ -12,9 +12,13 @@ class ResultsContainer extends React.Component {
 
     render() {
         return (
-            <div className="results">
-                <ResultsFilters isData={this.props.data && this.props.data.length ? this.props.data.length : false} />
-                <ResultList data={this.props.data} />
+            <div className={this.props.data && this.props.data.length ? 'results' : 'results results--nodata'}>
+                <div className="results__filter-container">
+                    <ResultsFilters isData={this.props.data && this.props.data.length ? this.props.data.length : false} />
+                </div>
+                <div className="results__list-container">
+                    <ResultList data={this.props.data} />
+                </div>
             </div>
         );
     }

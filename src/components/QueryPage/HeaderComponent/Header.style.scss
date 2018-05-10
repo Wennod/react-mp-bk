@@ -2,11 +2,13 @@
     display: flex;
     flex-flow: column;
     padding: 0 100px;
+    flex: 0 0 auto;
+
+    /* temporal */
+        background-color: ghostwhite;
+    /* temporal */
+
     &__logo-wraper {
-        margin-bottom: 50px;
-    }
-
-    &__search-wraper {
-
+        margin: 20px 0;
     }
 }
