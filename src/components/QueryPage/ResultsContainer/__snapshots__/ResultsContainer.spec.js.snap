@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsContainer snapshot should match snapshot 1`] = `
+<div
+  className="results results--nodata"
+>
+  <div
+    className="results__filter-container"
+  >
+    <div
+      className="result-filter result-filter--nodata"
+    />
+  </div>
+  <div
+    className="results__list-container"
+  >
+    <div
+      className="list"
+    >
+      <h2
+        className="results__error"
+      >
+        No results
+      </h2>
+    </div>
+  </div>
+</div>
+`;

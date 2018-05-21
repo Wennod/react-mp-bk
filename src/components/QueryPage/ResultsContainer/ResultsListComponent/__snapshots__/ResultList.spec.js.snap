@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultList snapshot test should match to prev snapshot 1`] = `
+<div
+  className="list"
+>
+  <div
+    className="list__content"
+  >
+    <div
+      className="movie-card"
+    >
+      <img
+        alt="Gemini poster"
+        className="movie-card__image"
+        src="https: //image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg"
+      />
+      <div
+        className="movie-card__description"
+      >
+        <p
+          className="movie-card__title"
+        >
+          Gemini
+        </p>
+        <p
+          className="year"
+        >
+          2018
+        </p>
+      </div>
+      <p
+        className="movie-card__genre"
+      >
+        Mystery
+      </p>
+    </div>
+    <div
+      className="movie-card"
+    >
+      <img
+        alt="Gemini poster"
+        className="movie-card__image"
+        src="https: //image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg"
+      />
+      <div
+        className="movie-card__description"
+      >
+        <p
+          className="movie-card__title"
+        >
+          Gemini
+        </p>
+        <p
+          className="year"
+        >
+          2018
+        </p>
+      </div>
+      <p
+        className="movie-card__genre"
+      >
+        Mystery
+      </p>
+    </div>
+  </div>
+</div>
+`;

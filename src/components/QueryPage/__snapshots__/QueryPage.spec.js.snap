@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryPage snapshot should match snapshot 1`] = `
+<div
+  class="query-page"
+>
+  <div
+    class="header"
+  >
+    <div
+      class="header__logo-wraper"
+    >
+      <img
+        alt="logo"
+        class="header__logo"
+        src="http://via.placeholder.com/100x25"
+      />
+    </div>
+    <div
+      class="header__search-wraper"
+    >
+      <form
+        class="search-form"
+      >
+        <h2>
+          Find your movies
+        </h2>
+        <input
+          class="search-form__input"
+          id="fieldId"
+          name="search"
+          type="text"
+        />
+        <div
+          class="search-form__group"
+        >
+          <div
+            class="search-form__filter"
+          >
+            <p
+              class="search-form__filter-title"
+            >
+              Search By
+            </p>
+            <input
+              checked=""
+              class="search-form__filter-toggler"
+              id="title"
+              name="searchCriteria"
+              type="radio"
+              value="title"
+            />
+            <input
+              class="search-form__filter-toggler"
+              id="genre"
+              name="searchCriteria"
+              type="radio"
+              value="genres"
+            />
+          </div>
+          <input
+            class="search-button"
+            type="submit"
+            value="SEARCH"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    class="results results--nodata"
+  >
+    <div
+      class="results__filter-container"
+    >
+      <div
+        class="result-filter result-filter--nodata"
+      />
+    </div>
+    <div
+      class="results__list-container"
+    >
+      <div
+        class="list"
+      >
+        <h2
+          class="results__error"
+        >
+          No results
+        </h2>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="footer"
+  >
+    <img
+      alt="logo"
+      class="footer__logo"
+      src="http://via.placeholder.com/100x25"
+    />
+  </footer>
+</div>
+`;

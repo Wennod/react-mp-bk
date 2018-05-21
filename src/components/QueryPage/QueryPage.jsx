@@ -1,10 +1,11 @@
 import React from 'react';
+// import fetch from 'isomorphic-fetch';
 
-import Header from './HeaderComponent/Header';
-import ResultsContainer from './ResultsComponent/ResultsContainer';
-import Footer from './FooterComponent/Footer';
+import Header from '../Header/Header';
+import ResultsContainer from './ResultsContainer/ResultsContainer';
+import Footer from '../Footer/Footer';
 
-import style from './QueryPage.style.scss'
+import style from './QueryPage.style.scss';
 
 class QueryPage extends React.Component {
     constructor(props) {
@@ -12,39 +13,45 @@ class QueryPage extends React.Component {
         this.state = {
             queryResults: {},
             queryValue: '',
-            queryParam: 'title'
+            queryParam: 'title',
         };
+    }
+
+    getQueryString() {
+        let queryValue = this.state.queryValue.replace(/\s/g,'%20','');
+        let queryParam = this.state.queryParam;
+        return `http://react-cdp-api.herokuapp.com/movies?search=${queryValue}&searchBy=${queryParam}`;
     }
 
     getMovies(event) {
         event.preventDefault();
-        fetch(`http://react-cdp-api.herokuapp.com/movies?search=${this.state.queryValue.replace(/\s/g,'%20')}&searchBy=${this.state.queryParam}`).then((result) => {
-            return result.json();
-        }).then((result) => {
-            this.setState(() => {
-                return { queryResults: result }; 
-            });
-        }, (err) => {
-            throw new Error(err);
-        });
+        fetch(this.getQueryString())
+            .then(result => result.json())
+            .then((result) => {
+                    this.setState(() => ({ queryResults: result }));
+                },
+                (err) => {
+                    throw new Error(err);
+                }
+            );
     }
 
     setQueryValue(input) {
-        this.setState(() => {
-            return { queryValue: input.value };
-        });
+        this.setState(() => ({ queryValue: input.value }));
     }
 
     setQueryParam(radio) {
-        this.setState(() => {
-            return { queryParam: radio.value };
-        });
+        this.setState(() => ({ queryParam: radio.value }));
     }
 
     render() {
         return (
             <div className="query-page">
-                <Header setQueryValue={this.setQueryValue.bind(this)} getMovies={this.getMovies.bind(this)} setQueryParam={this.setQueryParam.bind(this)} />
+                <Header
+                    setQueryValue={this.setQueryValue.bind(this)}
+                    getMovies={this.getMovies.bind(this)}
+                    setQueryParam={this.setQueryParam.bind(this)}
+                />
                 <ResultsContainer data={this.state.queryResults.data} />
                 <Footer />
             </div>

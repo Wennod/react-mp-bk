@@ -1,0 +1,13 @@
+.results {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column;
+    
+    &__filter-container, &__list-container {
+        padding: 0 100px;   
+    }
+
+    &__filter-container {
+        background-color: lavender;
+    }
+}

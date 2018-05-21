@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsContainer snapshot should match snapshot1 1`] = `
+<div
+  className="result-filter"
+>
+  <p
+    className="result-filter__count"
+  >
+    10
+     movies found
+  </p>
+  <div
+    className="result-filter__controls"
+  >
+    <p
+      className="result-filter__controls-title"
+    >
+      Sort by
+    </p>
+    <input
+      type="button"
+      value="release date"
+    />
+    <input
+      type="button"
+      value="rating"
+    />
+  </div>
+</div>
+`;
+
+exports[`ResultsContainer snapshot should match snapshot2 1`] = `
+<div
+  className="result-filter result-filter--nodata"
+/>
+`;
