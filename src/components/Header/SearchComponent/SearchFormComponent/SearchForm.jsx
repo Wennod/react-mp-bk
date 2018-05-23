@@ -25,7 +25,7 @@ class SearchForm extends React.Component {
                         <input 
                             onClick={() => this.props.setQueryParam(this.titleRadio)} 
                             ref={el => this.titleRadio = el} 
-                            className="search-form__filter-toggler" 
+                            className="search-form__filter-toggler search-form__filter-toggler--t" 
                             type="radio" 
                             name="searchCriteria" 
                             id="title" 
@@ -35,7 +35,7 @@ class SearchForm extends React.Component {
                         <input 
                             onClick={() => this.props.setQueryParam(this.genreRadio)}
                             ref={el => this.genreRadio = el} 
-                            className="search-form__filter-toggler" 
+                            className="search-form__filter-toggler search-form__filter-toggler-g" 
                             type="radio" 
                             name="searchCriteria" 
                             id="genre" 

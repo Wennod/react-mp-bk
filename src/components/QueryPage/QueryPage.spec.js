@@ -38,10 +38,11 @@ describe('QueryPage test', () => {
         expect(tree.state().queryParam).toEqual('genres');
     });
 
-    it('should change search value', () => {
-        const tree = mount(<QueryPage />);        
-        let input = tree.find('.search-form__input');
-        input.simulate('change', { target: { value: 'Hello' } });
-    });
+    // it('should change search value', () => {
+    //     const tree = mount(<QueryPage />);        
+    //     let input = tree.find('.search-form__input');
+    //     input.simulate('change', { target: { value: 'Hello' } });
+    //     console.log(input)
+    // });
 
 });
