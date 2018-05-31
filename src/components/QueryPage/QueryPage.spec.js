@@ -34,10 +34,4 @@ describe('QueryPage test', () => {
         radio.simulate('click');
         expect(tree.state().queryParam).toEqual('genres');
     });
-
-    it('should change search value', () => {
-        const tree = mount(<QueryPage />);     
-        const input = tree.find('.search-form__input');
-        console.log(input);
-    });
 });
