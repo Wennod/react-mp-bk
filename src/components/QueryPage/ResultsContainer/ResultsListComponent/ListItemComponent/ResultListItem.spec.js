@@ -1,6 +1,5 @@
 import React from 'react';
 import ResultList from './ResultListItem';
-import renderer from 'react-test-renderer';
 
 const __data = {
     "id": 412302,
@@ -18,9 +17,7 @@ const __data = {
 
 describe('ResultList', () => {
     it('should match snapshot', () => {
-        const tree = renderer
-            .create(<ResultList data={__data} />)
-            .toJSON();
+        const tree = mount(<ResultList data={__data} />);
         expect(tree).toMatchSnapshot();
     });
 });

@@ -1,71 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header snapshot should match snapshot 1`] = `
-<div
-  className="header"
->
+<Header>
   <div
-    className="header__logo-wraper"
+    className="header"
   >
-    <img
-      alt="logo"
-      className="header__logo"
-      src="http://via.placeholder.com/100x25"
-    />
-  </div>
-  <div
-    className="header__search-wraper"
-  >
-    <form
-      className="search-form"
-      onSubmit={undefined}
+    <div
+      className="header__logo-wraper"
     >
-      <h2>
-        Find your movies
-      </h2>
-      <input
-        className="search-form__input"
-        id="fieldId"
-        name="search"
-        onChange={[Function]}
-        type="text"
+      <img
+        alt="logo"
+        className="header__logo"
+        src="http://via.placeholder.com/100x25"
       />
-      <div
-        className="search-form__group"
+    </div>
+    <div
+      className="header__search-wraper"
+    >
+      <SearchComponentContainer
+        className="header__search-component"
       >
-        <div
-          className="search-form__filter"
-        >
-          <p
-            className="search-form__filter-title"
+        <SearchForm>
+          <form
+            className="search-form"
           >
-            Search By
-          </p>
-          <input
-            className="search-form__filter-toggler"
-            defaultChecked={true}
-            id="title"
-            name="searchCriteria"
-            onClick={[Function]}
-            type="radio"
-            value="title"
-          />
-          <input
-            className="search-form__filter-toggler"
-            id="genre"
-            name="searchCriteria"
-            onClick={[Function]}
-            type="radio"
-            value="genres"
-          />
-        </div>
-        <input
-          className="search-button"
-          type="submit"
-          value="SEARCH"
-        />
-      </div>
-    </form>
+            <h2>
+              Find your movies
+            </h2>
+            <input
+              className="search-form__input"
+              id="fieldId"
+              name="search"
+              onChange={[Function]}
+              type="text"
+            />
+            <div
+              className="search-form__group"
+            >
+              <div
+                className="search-form__filter"
+              >
+                <p
+                  className="search-form__filter-title"
+                >
+                  Search By
+                </p>
+                <input
+                  className="search-form__filter-toggler search-form__filter-toggler--t"
+                  defaultChecked={true}
+                  id="title"
+                  name="searchCriteria"
+                  onClick={[Function]}
+                  type="radio"
+                  value="title"
+                />
+                <input
+                  className="search-form__filter-toggler search-form__filter-toggler-g"
+                  id="genre"
+                  name="searchCriteria"
+                  onClick={[Function]}
+                  type="radio"
+                  value="genres"
+                />
+              </div>
+              <input
+                className="search-button"
+                type="submit"
+                value="SEARCH"
+              />
+            </div>
+          </form>
+        </SearchForm>
+      </SearchComponentContainer>
+    </div>
   </div>
-</div>
+</Header>
 `;

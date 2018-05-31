@@ -6,14 +6,7 @@ import indexStyle from './index.scss';
 
 import App from './App';
 
-import MoviePage from './components/MoviePage/MoviePage';
-
 render(
-    <Router>
-        <div>
-            <Route path="/" component={App} />
-            <Route path="/movie" component={MoviePage} />
-        </div>
-    </Router>,    
+    <App />,    
     document.getElementById('root')
 );

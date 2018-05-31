@@ -1,32 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ResultList should match snapshot 1`] = `
-<div
-  className="movie-card"
+<ListItem
+  data={
+    Object {
+      "budget": 0,
+      "genres": Array [
+        "Mystery",
+        "Thriller",
+      ],
+      "id": 412302,
+      "poster_path": "https: //image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg",
+      "release_date": "2018-03-30",
+      "revenue": 0,
+      "runtime": 92,
+      "tagline": "",
+      "title": "Gemini",
+      "vote_average": 10,
+      "vote_count": 3,
+    }
+  }
 >
-  <img
-    alt="Gemini poster"
-    className="movie-card__image"
-    src="https: //image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg"
-  />
   <div
-    className="movie-card__description"
+    className="movie-card"
   >
-    <p
-      className="movie-card__title"
+    <img
+      alt="Gemini poster"
+      className="movie-card__image"
+      src="https: //image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg"
+    />
+    <div
+      className="movie-card__description"
     >
-      Gemini
-    </p>
+      <p
+        className="movie-card__title"
+      >
+        Gemini
+      </p>
+      <p
+        className="year"
+      >
+        2018
+      </p>
+    </div>
     <p
-      className="year"
+      className="movie-card__genre"
     >
-      2018
+      Mystery
     </p>
   </div>
-  <p
-    className="movie-card__genre"
-  >
-    Mystery
-  </p>
-</div>
+</ListItem>
 `;

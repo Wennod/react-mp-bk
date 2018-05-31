@@ -1,12 +1,9 @@
 import React from 'react';
 import SearchContainer from './SearchContainer';
-import renderer from 'react-test-renderer';
 
 describe('SearchContainer snapshot', () => {
     it('should match snapshot', () => {
-        const tree = renderer
-            .create(<SearchContainer />)
-            .toJSON();
+        const tree = mount(<SearchContainer />);
         expect(tree).toMatchSnapshot();
     });
 });

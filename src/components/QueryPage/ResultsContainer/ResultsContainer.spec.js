@@ -1,6 +1,5 @@
 import React from 'react';
 import ResultsContainer from './ResultsContainer';
-import renderer from 'react-test-renderer';
 
 const __data = [
     {
@@ -20,9 +19,7 @@ const __data = [
 
 describe('ResultsContainer snapshot', () => {
     it('should match snapshot', () => {
-        const tree = renderer
-            .create(<ResultsContainer />)
-            .toJSON();
+        const tree = mount(<ResultsContainer />);
         expect(tree).toMatchSnapshot();
     });
 });

@@ -1,54 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchForm snapshot should match snapshot 1`] = `
-<form
-  className="search-form"
-  onSubmit={undefined}
->
-  <h2>
-    Find your movies
-  </h2>
-  <input
-    className="search-form__input"
-    id="fieldId"
-    name="search"
-    onChange={[Function]}
-    type="text"
-  />
-  <div
-    className="search-form__group"
+<SearchForm>
+  <form
+    className="search-form"
   >
+    <h2>
+      Find your movies
+    </h2>
+    <input
+      className="search-form__input"
+      id="fieldId"
+      name="search"
+      onChange={[Function]}
+      type="text"
+    />
     <div
-      className="search-form__filter"
+      className="search-form__group"
     >
-      <p
-        className="search-form__filter-title"
+      <div
+        className="search-form__filter"
       >
-        Search By
-      </p>
+        <p
+          className="search-form__filter-title"
+        >
+          Search By
+        </p>
+        <input
+          className="search-form__filter-toggler search-form__filter-toggler--t"
+          defaultChecked={true}
+          id="title"
+          name="searchCriteria"
+          onClick={[Function]}
+          type="radio"
+          value="title"
+        />
+        <input
+          className="search-form__filter-toggler search-form__filter-toggler-g"
+          id="genre"
+          name="searchCriteria"
+          onClick={[Function]}
+          type="radio"
+          value="genres"
+        />
+      </div>
       <input
-        className="search-form__filter-toggler"
-        defaultChecked={true}
-        id="title"
-        name="searchCriteria"
-        onClick={[Function]}
-        type="radio"
-        value="title"
-      />
-      <input
-        className="search-form__filter-toggler"
-        id="genre"
-        name="searchCriteria"
-        onClick={[Function]}
-        type="radio"
-        value="genres"
+        className="search-button"
+        type="submit"
+        value="SEARCH"
       />
     </div>
-    <input
-      className="search-button"
-      type="submit"
-      value="SEARCH"
-    />
-  </div>
-</form>
+  </form>
+</SearchForm>
 `;

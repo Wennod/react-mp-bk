@@ -1,54 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchContainer snapshot should match snapshot 1`] = `
-<form
-  className="search-form"
-  onSubmit={undefined}
->
-  <h2>
-    Find your movies
-  </h2>
-  <input
-    className="search-form__input"
-    id="fieldId"
-    name="search"
-    onChange={[Function]}
-    type="text"
-  />
-  <div
-    className="search-form__group"
-  >
-    <div
-      className="search-form__filter"
+<SearchComponentContainer>
+  <SearchForm>
+    <form
+      className="search-form"
     >
-      <p
-        className="search-form__filter-title"
+      <h2>
+        Find your movies
+      </h2>
+      <input
+        className="search-form__input"
+        id="fieldId"
+        name="search"
+        onChange={[Function]}
+        type="text"
+      />
+      <div
+        className="search-form__group"
       >
-        Search By
-      </p>
-      <input
-        className="search-form__filter-toggler"
-        defaultChecked={true}
-        id="title"
-        name="searchCriteria"
-        onClick={[Function]}
-        type="radio"
-        value="title"
-      />
-      <input
-        className="search-form__filter-toggler"
-        id="genre"
-        name="searchCriteria"
-        onClick={[Function]}
-        type="radio"
-        value="genres"
-      />
-    </div>
-    <input
-      className="search-button"
-      type="submit"
-      value="SEARCH"
-    />
-  </div>
-</form>
+        <div
+          className="search-form__filter"
+        >
+          <p
+            className="search-form__filter-title"
+          >
+            Search By
+          </p>
+          <input
+            className="search-form__filter-toggler search-form__filter-toggler--t"
+            defaultChecked={true}
+            id="title"
+            name="searchCriteria"
+            onClick={[Function]}
+            type="radio"
+            value="title"
+          />
+          <input
+            className="search-form__filter-toggler search-form__filter-toggler-g"
+            id="genre"
+            name="searchCriteria"
+            onClick={[Function]}
+            type="radio"
+            value="genres"
+          />
+        </div>
+        <input
+          className="search-button"
+          type="submit"
+          value="SEARCH"
+        />
+      </div>
+    </form>
+  </SearchForm>
+</SearchComponentContainer>
 `;

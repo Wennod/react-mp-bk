@@ -1,5 +1,5 @@
-describe('Search by title', () => {
-    it('should successfully perform search by title', () => {
+it('should successfully perform search by title', () => {
+describe('Searches', () => {
         cy.visit('/')
         cy.get('.search-button').click();
         cy.get('.search-form__filter-toggler--t').should('be.checked');
