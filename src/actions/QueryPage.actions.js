@@ -11,17 +11,13 @@ function receiveMovies(data) {
     }
 }
 
-function getQueryString(state) {
-    let queryValue = state.queryValue.replace(/\s/g,'%20','');
-    let queryParam = state.queryParam;
-    return `http://react-cdp-api.herokuapp.com/movies?search=${queryValue}&searchBy=${queryParam}`;
-}
-
 export function fetchMovies(event) {
     event.preventDefault();
-    return function(dispatch) {
+    return (dispatch, getState) => {
+        let queryString = getState().search.queryString;
+        console.log(queryString);
         dispatch(requestMovies);
-        return fetch(getQueryString(this.state))
+        return fetch(queryString)
             .then(result => result.json())
             .then(result => {
                 dispatch(receiveMovies(result));

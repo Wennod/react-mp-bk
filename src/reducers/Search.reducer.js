@@ -1,10 +1,12 @@
 import react from 'react';
 
 const initialState = {
-    queryResults: {},
+    queryParam: 'title',
+    queryValue: '',
+    queryString: 'http://react-cdp-api.herokuapp.com/movies?search=&searchBy='
 };
 
-export default function QueryPageReducer(state=initialState, action) {
+export default function SearchReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_QUERY_PARAM': {
             return {
@@ -17,22 +19,14 @@ export default function QueryPageReducer(state=initialState, action) {
             return {
                 ...state,
                 queryValue: action.payload
-            };
+            }
         }
 
-        case 'GET_MOVIES': {
+        case 'SET_QUERY_STRING': {
             return {
                 ...state,
-                queryStatus: 'RECEIVING'
-            };
-        }
-
-        case 'GET_MOVIES_SUCCESS': {
-            return {
-                ...state,
-                queryStatus: 'RECEIVED',
-                queryResults: action.payload
-            };
+                queryString: action.payload
+            }
         }
     
         default:

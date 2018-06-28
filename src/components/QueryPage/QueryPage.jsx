@@ -1,26 +1,17 @@
 import React from 'react';
-// import fetch from 'isomorphic-fetch';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import Header from '../Header/Header';
 import ResultsContainer from './ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
 
 import style from './QueryPage.style.scss';
+import * as queryPageActions from '../../actions/QueryPage.actions';
 
 class QueryPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            queryResults: {},
-            queryValue: '',
-            queryParam: 'title',
-        };
-    }
-
-    getQueryString() {
-        let queryValue = this.state.queryValue.replace(/\s/g,'%20','');
-        let queryParam = this.state.queryParam;
-        return `http://react-cdp-api.herokuapp.com/movies?search=${queryValue}&searchBy=${queryParam}`;
     }
 
     getMovies(event) {
@@ -36,27 +27,29 @@ class QueryPage extends React.Component {
             );
     }
 
-    setQueryValue(input) {
-        this.setState(() => ({ queryValue: input.value }));
-    }
-
-    setQueryParam(radio) {
-        this.setState(() => ({ queryParam: radio.value }));
-    }
-
     render() {
+        console.log(this.props);
         return (
             <div className="query-page">
-                <Header
-                    setQueryValue={this.setQueryValue.bind(this)}
-                    getMovies={this.getMovies.bind(this)}
-                    setQueryParam={this.setQueryParam.bind(this)}
-                />
-                <ResultsContainer data={this.state.queryResults.data} />
+                <Header getMovies={this.props.queryPageActions.fetchMovies} />
+                <ResultsContainer />
                 <Footer />
             </div>
         );
     }
 }
 
-export default QueryPage;
+function mapStateToProps(state) {
+    return {
+        queryPage: state.query,
+        search: state.search
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        queryPageActions: bindActionCreators(queryPageActions, dispatch)
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(QueryPage)

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import ResultList from './ResultsListComponent/ResultList';
 import ResultsFilters from './ResultsFiltersComponent/ResultsFilters';
@@ -6,31 +7,36 @@ import ResultsFilters from './ResultsFiltersComponent/ResultsFilters';
 import Style from './ResultsContainer.style.scss';
 
 class ResultsContainer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
+        let results = this.props.results.queryResults.data;
+
         return (
             <div 
-                className={this.props.data && this.props.data.length 
+                className={results && results.length 
                     ? 'results' 
                     : 'results results--nodata'
                 }
             >
                 <div className="results__filter-container">
                     <ResultsFilters 
-                        isData={this.props.data && this.props.data.length 
-                            ? this.props.data.length 
+                        isData={results && results.length 
+                            ? results.length 
                             : false} 
                     />
                 </div>
                 <div className="results__list-container">
-                    <ResultList data={this.props.data} />
+                    <ResultList data={results} />
                 </div>
             </div>
         );
     }
 }
 
-export default ResultsContainer;
+function mapStateToProps(state) {
+    return {
+        results: state.query
+    }
+}
+
+export default connect(mapStateToProps)(ResultsContainer);

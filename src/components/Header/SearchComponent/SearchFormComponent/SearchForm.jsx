@@ -12,7 +12,7 @@ class SearchForm extends React.Component {
             <form className="search-form" onSubmit={this.props.getMovies}>
                 <h2>Find your movies</h2>
                 <input 
-                    onChange={() => this.props.setQueryValue(this.inputField)} 
+                    onChange={() => this.props.setQueryValue(this.inputField.value)} 
                     ref={el => this.inputField = el}  
                     className="search-form__input" 
                     type="text" 
@@ -23,7 +23,7 @@ class SearchForm extends React.Component {
                     <div className="search-form__filter">
                         <p className="search-form__filter-title">Search By</p>
                         <input 
-                            onClick={() => this.props.setQueryParam(this.titleRadio)} 
+                            onClick={() => this.props.setQueryParam(this.titleRadio.value)} 
                             ref={el => this.titleRadio = el} 
                             className="search-form__filter-toggler search-form__filter-toggler--t" 
                             type="radio" 
@@ -33,7 +33,7 @@ class SearchForm extends React.Component {
                             defaultChecked 
                         />
                         <input 
-                            onClick={() => this.props.setQueryParam(this.genreRadio)}
+                            onClick={() => this.props.setQueryParam(this.genreRadio.value)}
                             ref={el => this.genreRadio = el} 
                             className="search-form__filter-toggler search-form__filter-toggler-g" 
                             type="radio" 
