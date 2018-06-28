@@ -9,8 +9,8 @@ const ResultsPane = (props) => {
                 <p className="result-filter__count">{props.isData} movies found</p>
                 <div className="result-filter__controls">
                     <p className="result-filter__controls-title">Sort by</p>
-                    <input type="button" value="release date"/>
-                    <input type="button" value="rating"/>
+                    <input onClick={() => props.sortData('release date')} type="button" value="release date"/>
+                    <input onClick={() => props.sortData('rating')} type="button" value="rating"/>
                 </div>
             </div>
         )

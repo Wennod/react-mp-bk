@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as searchActions from '../../../actions/SearchContainer.actions';
+import * as searchActions from '../../../actions/search.actions';
 import SearchForm from './SearchFormComponent/SearchForm';
 
 class SearchComponentContainer extends React.Component {
@@ -11,14 +11,11 @@ class SearchComponentContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <SearchForm 
-                // setQueryParam={this.props.setQueryParam} 
-                // setQueryValue={this.props.setQueryValue} 
                 setQueryParam={this.props.searchActions.queryParam}
                 setQueryValue={this.props.searchActions.queryString}
-                getMovies={this.props.getMovies} 
+                getMovies={this.props.searchActions.fetchMovies} 
             />
         );
     }
@@ -37,4 +34,3 @@ function mapDispatchToProps(dispatch) {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchComponentContainer);
-// export default SearchComponentContainer;
